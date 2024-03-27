@@ -22,10 +22,48 @@
 
   <!-- Information about body -->
   <body>
+    <div class="js-menu-container">
+      <a class="menu-toggle js-close-menu">
+        <svg class="icon-close-btn">
+          <use href="./images/icons/icons.svg#icon-close-btn"></use>
+        </svg>
+      </a>
+      <nav class="mobile-menu-navbar">
+        <ul class="navbar-list">
+          <li>
+            <a
+              class="navbar-list-item active"
+              href="./index.html"
+              rel="noopener noreferrer"
+              >Studio</a
+            >
+          </li>
+          <li>
+            <a
+              class="navbar-list-item"
+              href="./portfolio.html"
+              rel="noopener noreferrer"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a class="navbar-list-item" href="" rel="noopener noreferrer"
+              >Contacts</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
     <!-- Information about top line -->
     <header class="top-line">
       <div class="container top-line-style">
         <a href="./index.html" rel="noopener noreferrer" class="logo">WEB</a>
+
+        <a class="js-open-menu">
+          <svg class="burger-menu">
+            <use href="./images/icons/icons.svg#icon-phone"></use>
+          </svg>
+        </a>
 
         <!-- Nav bar information -->
         <nav class="navbar">
@@ -200,7 +238,7 @@
       </section>
 
       <!-- Information about Section 2 - What Are We Doing -->
-      <section class="section">
+      <section class="section what-are-we-doing">
         <div class="container section-style">
           <h2>What are we doing</h2>
           <ul class="section-list">
@@ -522,7 +560,7 @@
       <section class="section">
         <div class="container section-style">
           <h2>Customers</h2>
-          <ul class="section-list">
+          <ul class="section-list customers-with-two-columns">
             <li class="icon-client-background">
               <svg class="icon-client">
                 <use href="./images/icons/icons.svg#icon-logo-1"></use>
@@ -622,7 +660,7 @@
             </li>
           </ul>
         </div>
-        <form>
+        <form class="footer-form">
           <p class="title-subscribe">Subscribe</p>
           <div class="footer-subscribe">
             <div>
@@ -636,15 +674,18 @@
               />
             </div>
             <div class="button-subscribe">
-              <input type="submit" value="Subscribe" class="btn-subscribe" />
-              <svg class="icon-subscribe">
-                <use href="./images/icons/icons.svg#icon-subscribe"></use>
-              </svg>
+              <button type="submit" class="btn-subscribe">
+                Subscribe
+                <svg class="icon-subscribe">
+                  <use href="./images/icons/icons.svg#icon-subscribe"></use>
+                </svg>
+              </button>
             </div>
           </div>
         </form>
       </div>
     </footer>
     <script src="./js/modal.js"></script>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

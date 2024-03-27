@@ -333,6 +333,11 @@ svg {
   margin-bottom: 16px;
 }
 
+.footer-form {
+  display: flex;
+  flex-direction: column;
+}
+
 .footer-subscribe {
   display: flex;
 }
@@ -374,16 +379,10 @@ svg {
 }
 
 .icon-subscribe {
-  position: absolute;
+  position: relative;
   width: 24px;
   height: 24px;
   fill: var(--color-white);
-  margin-right: 20px;
+  margin-left: 15px;
   cursor: pointer;
-}
-
-.button-subscribe {
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
 }

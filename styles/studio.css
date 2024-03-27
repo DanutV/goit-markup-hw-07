@@ -33,6 +33,10 @@ li {
 }
 
 .container {
+  margin: 0 auto;
+}
+
+.top-line .container {
   width: 1200px;
   margin: 0 auto;
 }
@@ -87,11 +91,8 @@ a {
 
 /* Information about Nav-Bar */
 .navbar-list {
-  display: flex;
-  gap: 40px;
-  margin-right: 100px;
+  display: none;
 }
-
 .navbar-list-item {
   font-family: var(--font-family);
   font-weight: 500;
@@ -109,16 +110,8 @@ a {
 
 /* Information about Contacts in Nav-Bar */
 .contact {
-  font-family: var(--font-family);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  display: flex;
-  gap: 40px;
-  margin-left: 100px;
+  display: none;
 }
-
 .contact a {
   color: var(--button-hover-color);
 }
@@ -126,6 +119,16 @@ a {
 .contact a:hover,
 .contact a:focus {
   color: var(--hover-links-color);
+}
+
+.burger-menu {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  width: 42px;
+  height: 42px;
+  color: red;
+  fill: red;
 }
 
 /* Information about Hero Section */
@@ -320,6 +323,7 @@ label {
   border-radius: 2px;
   transition: border-color var(--transition), background-color var(--transition),
     fill var(--transition);
+  cursor: pointer;
 }
 
 .checkbox .checkbox-input:checked + .icon-checkbox {
@@ -346,6 +350,7 @@ label {
   text-decoration: underline;
   text-decoration-skip-ink: none;
   color: var(--blue-color);
+  cursor: pointer;
 }
 
 /* Information about button */
@@ -371,6 +376,14 @@ label {
   transition: var(--transition);
 }
 
+/* Information about modal phone approach */
+
+.icon-close-btn {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+
 /* Information about Hero Section background */
 .section-one {
   background: url("../images/hero-section/hero-background.png") no-repeat center,
@@ -393,32 +406,40 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
 .section-list-item h3 {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+  font-size: 36px;
+  line-height: 1.11111;
   letter-spacing: 0.02em;
+  text-transform: capitalize;
+  text-align: center;
+  color: var(--navy-blue);
 }
 
 .section-list-item p {
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--list-item-color);
+  padding-top: 8px;
+  padding-left: 10px;
 }
 
 .section-list-item {
-  width: 264px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 72px;
 }
 
 .section-list {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section-style {
@@ -436,6 +457,22 @@ label {
   text-align: center;
 }
 
+.what-are-we-doing {
+  display: none;
+}
+
+.customers-with-two-columns {
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  width: 396px;
+  margin: auto;
+}
+
+.icon-client-background {
+  margin-top: 50px;
+}
+
 /* Information about Section Our Team */
 .our-team-section {
   background: var(--cloud);
@@ -450,6 +487,7 @@ label {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  margin-top: 72px;
 }
 
 /* Card content */
@@ -551,6 +589,7 @@ label {
   line-height: 1.16667;
   letter-spacing: 0.03em;
   color: var(--blue-color);
+  text-align: center;
 }
 
 .footer-logo::after {
@@ -576,7 +615,9 @@ label {
 
 .footer-section-style {
   display: flex;
+  flex-direction: column;
   gap: 120px;
+  align-items: center;
 }
 
 /* Information about Footer Social Links */
@@ -589,6 +630,7 @@ label {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: center;
 }
 
 .footer-social-links-list {
@@ -632,18 +674,28 @@ label {
   margin-bottom: 16px;
 }
 
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .footer-subscribe {
   display: flex;
+  flex-direction: column;
 }
 
 .input-subscribe {
   border: 1px solid var(--color-white);
   border-radius: 4px;
-  width: 264px;
+  width: 398px;
   height: 40px;
   background-color: var(--navy-blue);
   color: var(--color-white);
   margin-right: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  opacity: 0.98;
 }
 
 .input-subscribe::placeholder {
@@ -653,6 +705,11 @@ label {
   line-height: 2;
   letter-spacing: 0.04em;
   padding-left: 16px;
+}
+
+.button-subscribe {
+  display: flex;
+  justify-content: center;
 }
 
 .btn-subscribe {
@@ -673,16 +730,293 @@ label {
 }
 
 .icon-subscribe {
-  position: absolute;
+  position: relative;
   width: 24px;
   height: 24px;
   fill: var(--color-white);
-  margin-right: 20px;
+  margin-left: 15px;
   cursor: pointer;
 }
 
-.button-subscribe {
+.js-menu-container {
+  display: none;
+}
+
+.js-menu-container.is-open {
   display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1;
+  padding: 40px 31px;
+  height: 100%;
+}
+.mobile-menu-navbar {
+  display: flex;
+}
+.js-close-menu {
+  border: none;
+  background: none;
+  align-self: self-end;
+}
+
+/* Stiliare pentru tableta */
+@media screen and (min-width: 768px) {
+  .navbar-list {
+    display: flex;
+    gap: 40px;
+    margin-right: 100px;
+  }
+  .contact {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    display: flex;
+    gap: 40px;
+    margin-left: 100px;
+  }
+  .burger-menu {
+    display: none;
+  }
+
+  .js-open-menu {
+    display: none;
+  }
+  .section-list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  .icon-benefit-background {
+    width: 264px;
+    height: 112px;
+    background: var(--cloud);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  .section-list-item h3 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+
+  .section-list-item p {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--list-item-color);
+  }
+
+  .what-are-we-doing {
+    display: flex;
+  }
+
+  .card {
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+      0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    background: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-section-style {
+    display: flex;
+    gap: 120px;
+    flex-direction: row;
+  }
+
+  .footer-subscribe {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .footer-logo {
+    font-family: var(--second-family);
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.16667;
+    letter-spacing: 0.03em;
+    color: var(--blue-color);
+    text-align: start;
+  }
+  .footer-social-links {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .footer-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .input-subscribe {
+    border: 1px solid var(--color-white);
+    border-radius: 4px;
+    width: 264px;
+    height: 40px;
+    background-color: var(--navy-blue);
+    color: var(--color-white);
+    margin-right: 24px;
+  }
+
+  .button-subscribe {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+/* Stilizare pentru desktop */
+@media screen and (min-width: 1158px) {
+  .navbar-list {
+    display: flex;
+    gap: 40px;
+    margin-right: 100px;
+  }
+  .contact {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    display: flex;
+    gap: 40px;
+    margin-left: 100px;
+  }
+  .burger-menu {
+    display: none;
+  }
+  .js-open-menu {
+    display: none;
+  }
+  .section-list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  .icon-benefit-background {
+    width: 264px;
+    height: 112px;
+    background: var(--cloud);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-list-item h3 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+
+  .section-list-item p {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--list-item-color);
+  }
+
+  .what-are-we-doing {
+    display: flex;
+  }
+
+  .card {
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+      0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    background: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .customers-with-two-columns {
+    flex-wrap: nowrap;
+    width: auto;
+    gap: 24px;
+  }
+
+  .footer-section-style {
+    display: flex;
+    gap: 120px;
+    flex-direction: row;
+  }
+
+  .footer-subscribe {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .footer-logo {
+    font-family: var(--second-family);
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.16667;
+    letter-spacing: 0.03em;
+    color: var(--blue-color);
+    text-align: start;
+  }
+
+  .footer-social-links {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .footer-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .input-subscribe {
+    border: 1px solid var(--color-white);
+    border-radius: 4px;
+    width: 264px;
+    height: 40px;
+    background-color: var(--navy-blue);
+    color: var(--color-white);
+    margin-right: 24px;
+  }
+
+  .button-subscribe {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 }
