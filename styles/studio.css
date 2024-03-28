@@ -122,13 +122,11 @@ a {
 }
 
 .burger-menu {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  width: 42px;
-  height: 42px;
-  color: red;
-  fill: red;
+  position: relative;
+  top: 24px;
+  right: 16px;
+  width: 20px;
+  height: 20px;
 }
 
 /* Information about Hero Section */
@@ -142,12 +140,13 @@ a {
 
 /* Information about Title Hero Section */
 .hero-section h1 {
-  width: 496px;
-  height: 120px;
+  width: 320px;
+  height: 80px;
   font-weight: 700;
-  font-size: 56px;
-  line-height: 1.07143;
+  font-size: 36px;
+  line-height: 1.11111;
   letter-spacing: 0.02em;
+  text-transform: capitalize;
   text-align: center;
   color: var(--color-white);
 }
@@ -467,6 +466,7 @@ label {
   flex-direction: row;
   width: 396px;
   margin: auto;
+  padding: 0 15px;
 }
 
 .icon-client-background {
@@ -748,18 +748,87 @@ label {
   position: fixed;
   top: 0;
   right: 0;
-  background-color: white;
+  background-color: var(--color-white);
+  padding: 80px 35px 40px 40px;
   z-index: 1;
-  padding: 40px 31px;
-  height: 100%;
 }
 .mobile-menu-navbar {
   display: flex;
 }
 .js-close-menu {
-  border: none;
-  background: none;
-  align-self: self-end;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  color: var(--blue-color);
+  background-color: var(--cornflower);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border-style: none;
+  margin-bottom: 24px;
+}
+
+.js-close-menu:hover {
+  color: var(--ocean);
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+
+.mobile-menu-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mobile-navbar-list-item {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 111%;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: var(--navy-blue);
+}
+
+.mobile-navbar-list-item:hover {
+  color: var(--ocean);
+}
+
+.mobile-menu-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 284px;
+  margin-bottom: 48px;
+}
+
+.mobile-menu-contact a {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: var(--slate);
+  transition: font-size var(--transition), color var(--transition);
+}
+
+.mobile-menu-contact a:hover {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 111%;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: var(--blue-color);
+}
+
+.mobile-social-links-list {
+  display: flex;
+  gap: 56px;
 }
 
 /* Stiliare pentru tableta */
@@ -776,7 +845,7 @@ label {
     line-height: 1.5;
     letter-spacing: 0.02em;
     display: flex;
-    gap: 40px;
+    flex-direction: column;
     margin-left: 100px;
   }
   .burger-menu {
@@ -786,15 +855,27 @@ label {
   .js-open-menu {
     display: none;
   }
+
   .section-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
   }
+
   .container {
-    width: 1200px;
     margin: 0 auto;
+  }
+
+  .hero-section h1 {
+    width: 496px;
+    height: 120px;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.07143;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--color-white);
   }
 
   .icon-benefit-background {
@@ -806,11 +887,20 @@ label {
     align-items: center;
     display: none;
   }
+  .section-list-item {
+    display: flex;
+    flex-direction: column;
+    width: 264px;
+    justify-content: space-between;
+  }
+
   .section-list-item h3 {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.2;
+    font-size: 36px;
+    line-height: 1.11111;
     letter-spacing: 0.02em;
+    text-transform: capitalize;
+    text-align: center;
+    color: var(--navy-blue);
   }
 
   .section-list-item p {
@@ -818,12 +908,35 @@ label {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--list-item-color);
+    text-align: start;
   }
 
   .what-are-we-doing {
-    display: flex;
+    display: none;
   }
 
+  .benefits-with-two-columns {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    width: 736px;
+  }
+  .our-team-two-columns {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    width: 768px;
+    margin: auto;
+    gap: 24px;
+  }
+
+  .customers-with-two-columns {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    width: 552px;
+    gap: 7px;
+  }
   .card {
     border-radius: 0 0 4px 4px;
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
@@ -903,6 +1016,7 @@ label {
     line-height: 1.5;
     letter-spacing: 0.02em;
     display: flex;
+    flex-direction: row;
     gap: 40px;
     margin-left: 100px;
   }
@@ -922,6 +1036,17 @@ label {
     margin: 0 auto;
   }
 
+  .hero-section h1 {
+    width: 496px;
+    height: 120px;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.07143;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--color-white);
+  }
+
   .icon-benefit-background {
     width: 264px;
     height: 112px;
@@ -936,6 +1061,7 @@ label {
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
+    text-align: start;
   }
 
   .section-list-item p {
@@ -943,6 +1069,7 @@ label {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--list-item-color);
+    text-align: start;
   }
 
   .what-are-we-doing {
@@ -959,10 +1086,18 @@ label {
     gap: 32px;
   }
 
+  .benefits-with-two-columns {
+    flex-wrap: nowrap;
+    width: 1200px;
+  }
   .customers-with-two-columns {
     flex-wrap: nowrap;
-    width: auto;
-    gap: 24px;
+    width: 1200px;
+  }
+
+  .our-team-two-columns {
+    flex-wrap: nowrap;
+    width: 1200px;
   }
 
   .footer-section-style {
